@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.containerWeather{
+    width: 100% ; 
+    height: auto;
+    background-image: url(../Imgs/sky-clouds-cinematic-clouds-wallpaper-5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/* nav */
+nav{
+    display: flex;
+    justify-content: center;
+background-color: rgba(51, 51, 51,0.4);
+/* border-bottom: 0.01px solid rosybrown; */
+height: auto;
+}
+nav img{
+    width: 100px;
+}
+/* search button */
+.input[type = "text"] {
+    display: block;
+    color: rgb(34, 34, 34);
+    background: linear-gradient(142.99deg, rgba(217, 217, 217, 0.63) 15.53%, rgba(243, 243, 243, 0.63) 88.19%);
+    box-shadow: 0px 12px 24px -1px rgba(0, 0, 0,0.18);
+    border-color: rgba(7, 4, 14, 0);
+    border-radius: 15px;
+    block-size: 20px;
+    margin: 7px auto;
+    padding: 22px 18px;
+    outline: none;
+    text-align: center;
+    width: 450px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+  
+  .input[type = "text"]:hover {
+    width: 500px;
+  }
+  
+  .input[type = "text"]:focus {
+    width: 520px;
+  }
+
+
+/* card */
+.cardContainer {
+    padding-bottom: 44px;
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 5px;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    background-color: rgba(65, 65, 65, 0.408);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+  
+}
+  
+  .city {
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+  
+  .Country {
+    font-weight: 500;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    color: rgb(207, 206, 206);
+  }
+  
+  .temp {
+    font-size: 1.8em;
+    color: white;
+  }
+  
+  .InfoContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .min,
+  .max {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 20px;
+    gap: 4px;
+  }
+  
+  .max {
+    align-items: flex-start;
+    border-left: 2px solid white;
+  }
+  
+  .Cloud,
+  .Day {
+    font-size: 0.6em;
+    font-weight: 200;
+    color: white;
+  }
+  
+  .Icon,
+  .Date {
+    font-size: 0.6em;
+    font-weight: 200;
+    color: rgb(207, 206, 206);
+  }
+  
+  .cardContainer::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    position: absolute;
+    background-color: rgba(144, 161, 255,0.2);
+    z-index: 0;
+    border-radius: 50%;
+    left: 100px;
+    top: 50px;
+    transition: all 1s;
+  }
+  
+  .cardContainer:hover::before {
+    transform: translate(-50px, 50px);
+  }
+  /* submit button */
+  button {
+    
+    position: relative;
+    margin: 0;
+    padding: 0.4em 0.8em;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    background-color: #333;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  button:hover {
+    animation: sh0 0.5s ease-in-out both;
+  }
+  
+  @keyframes sh0 {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: rotate(7deg) translate3d(0, 0, 0);
+    }
+  
+    50% {
+      transform: rotate(-7deg) translate3d(0, 0, 0);
+    }
+  
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+  
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+  
+  button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+  
+  button::before,
+  button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0;
+    transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+    z-index: -1;
+    transform: translate(100%, -25%) translate3d(0, 0, 0);
+  }
+  
+  button:hover::before,
+  button:hover::after {
+    opacity: 0.15;
+    transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+  }
+  
+  button:hover::before {
+    transform: translate3d(50%, 0, 0) scale(0.9);
+  }
+  
+  button:hover::after {
+    transform: translate(50%, 0) scale(1.1);
+  }
+  
+  
+  
